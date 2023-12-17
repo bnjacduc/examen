@@ -1,0 +1,18 @@
+.clickable-label {
+  pointer-events: auto;
+}
+
+div {
+  width: auto; /* Ajusta el ancho según tus necesidades */
+  height: auto; /* Ajusta la altura según tus necesidades */
+  animation: slideAnimation 10s linear infinite;
+}
+
+@keyframes slideAnimation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

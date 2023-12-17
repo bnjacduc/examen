@@ -1,0 +1,46 @@
+<div class="marco">
+  <img src="/assets/icon/c-28b93bf742.webp" class="img-fluid" style="position: absolute; right: 0; top: 0; z-index: -100; WIDTH:100%; height: 100%;">
+  <ion-card-content class="login ion-fade-in-up ion-animatable">
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="usuario.nombre" id="nombre" label="Nombre" labelPlacement="floating"></ion-input>
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="usuario.apellido" id="apellido" label="Apellidos" labelPlacement="floating"></ion-input>
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="usuario.correo" id="correo2" label="Correo" labelPlacement="floating"></ion-input>
+      <ion-icon name="mail-outline" slot="start"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="usuario.preguntaSecreta" id="preguntasecreta" label="Pregunta secreta" labelPlacement="floating"></ion-input>
+      <ion-icon name="key-outline" slot="start"></ion-icon>
+      
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="usuario.respuestaSecreta" id="respuestasecreta" label="Respuesta secreta" labelPlacement="floating"></ion-input>
+      <ion-icon name="key-outline" slot="start"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" [(ngModel)]="usuario.password" id="contraseña" label="Contraseña" labelPlacement="floating"></ion-input>
+      <ion-icon name="key-outline" slot="start"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" [(ngModel)]="repeticionPassword" id="repetircontraseña" label="Repetir contraseña" labelPlacement="floating"></ion-input>
+      <ion-icon name="key-outline" slot="start"></ion-icon>
+    </ion-item>
+  </ion-card-content>
+  <br>
+  <div class="centrar-boton">
+    <ion-button (click)="actualizarPerfil()">
+      Actualizar mis datos
+    </ion-button>
+  </div>
+
+</div>

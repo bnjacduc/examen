@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div [@slideInOut]>
+      <ion-col size-md="6"><ion-img src="/assets/icon/logo-duoc.png" class="logo ion-margin-left"> </ion-img></ion-col>
+      <ion-col size-md="12"><div class="ion-title">Sistema de Asistencia DUOCUC</div></ion-col>
+      <ion-col size-md="6"></ion-col>
+    </div>
+  </ion-toolbar>
+
+  <ion-toolbar>
+      <ion-segment [(ngModel)]="componente_actual" (ngModelChange)="cambiarComponente($event)">
+        <ion-segment-button id="qr" value="qr" *ngIf="!admin_">
+          <ion-label>QR</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="miclase" *ngIf="!admin_">
+          <ion-label>Mi clase</ion-label>
+        </ion-segment-button>
+        <ion-segment-button class="clickable-label" id="Foro" value="foro" >
+          <ion-label>Foro</ion-label>
+        </ion-segment-button>
+        <ion-segment-button class="clickable-label" id="misdatos" value="misdatos" >
+          <ion-label>Mis datos</ion-label>
+        </ion-segment-button>
+        <ion-segment-button class="clickable-label" id="admin" value="admin" *ngIf="admin_">
+          <ion-label>Admin</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="/assets/icon/c-28b93bf742.webp" class="img-fluid" style="position: absolute; right: 0; top: 0; z-index: -100; WIDTH:100%; height: 100%;">
+  <app-qr [hidden]="componente_actual !== 'qr'" (qrCapturado)="cambiarComponente('miclase')"></app-qr>
+  <app-miclase [hidden]="componente_actual !== 'miclase'"></app-miclase>
+  <app-foro  [hidden]="componente_actual !== 'foro'"></app-foro>
+  <app-misdatos  [hidden]="componente_actual !== 'misdatos'"></app-misdatos>
+  <app-admin [hidden]="componente_actual !== 'admin'"></app-admin>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="cerrarSesion()" expand="block" fill="clear" shape="round">
+      Cerrar sesión
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
